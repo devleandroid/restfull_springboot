@@ -25,7 +25,7 @@ public class Pessoa implements Serializable {
     @Column(name = "endereco")
     private String endereco;
 
-    @Column(name = "contata")
+    @Column(name = "contato")
     private String contato;
 
     public Pessoa() { }
