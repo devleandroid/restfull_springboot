@@ -3,6 +3,7 @@ package com.project.rest.app.controller;
 import com.project.rest.app.entity.Pessoa;
 import com.project.rest.app.repository.PessoaRepository;
 import com.project.rest.app.service.MessageNotFoundException;
+import com.project.rest.app.service.PessoaServie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -17,8 +18,7 @@ public class PessoaController {
 
     private static List<Pessoa> list = new ArrayList<Pessoa>(  );
 
-    @Autowired
-    private PessoaRepository repository;
+    @Autowired private PessoaServie servie;
 //    static {
 //        list.add( new Pessoa( 1l,"leandro marques" ) );
 //        list.add( new Pessoa( 2l,"Laura marques" ) );
@@ -63,7 +63,6 @@ public class PessoaController {
         }
         return pessoa;
     }
-
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @ResponseBody
